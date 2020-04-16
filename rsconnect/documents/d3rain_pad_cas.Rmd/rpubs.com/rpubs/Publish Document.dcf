@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/600158/64cd3e5cb9ac4e5fbe4ca346473f9ab8
+bundleId: https://api.rpubs.com/api/v1/document/600158/64cd3e5cb9ac4e5fbe4ca346473f9ab8
+url: http://rpubs.com/cassidybargell/600158
+when: 1587062806.09557

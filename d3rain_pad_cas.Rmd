@@ -1,0 +1,36 @@
+---
+title: "d3rain attempt"
+author: "Cassidy Bargell & Paddy Adams"
+date: "4/16/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(d3rain)
+library(broom)
+library(infer)
+library(skimr)
+library(gganimate)
+library(rpart.plot)
+library(tidymodels)
+library(tidyverse)
+library(randomForest)
+library(d3rain)
+nes <- read_rds("ch13_nes.rds") %>% 
+  mutate(vote = factor(ifelse(dvote == 1, "Democrat", "Republican"), 
+                          levels = c("Republican", "Democrat")))
+```
+
+```{r}
+nes %>%
+  d3rain(income, vote, toolTip = dvote, title = "Income Brackets vs. Vote") %>%
+  drip_settings(dripSequence = 'iterate',
+                ease = 'bounce',
+                jitterWidth = 40,
+                dripSpeed = 1000,
+                dripFill = 'hotpink') %>% 
+  chart_settings(fontFamily = 'arial',
+                 yAxisTickLocation = 'left') 
+```
+
